@@ -2,6 +2,7 @@
 import Count from "./components/Count";
 import { useState} from 'react';
 import Nombre from "./components/Nombre";
+import Todo from "./components/Todo";
 
 //componente
 function App() {
@@ -23,12 +24,14 @@ function App() {
       <button onClick={() => setPag("home")}>Home</button>
       <button onClick={() => setPag("count")}>Count</button>
       <button onClick={() => setPag("nombre")}>Nombre</button>
+      <button onClick={() => setPag("todo")}>TO-DO</button>
 
   {
       pag === "home" ? 
       <p>Bienvenido!</p> : pag === "count"?
       <Count/> : pag === "nombre" ?
-      <Nombre nombre={nombre} setNombre={setNombre} /> :
+      <Nombre nombre={nombre} setNombre={setNombre} /> : pag === "todo" ?
+      <Todo /> :
       ""  
   }
 
